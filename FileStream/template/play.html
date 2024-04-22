@@ -1,154 +1,308 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FileStreamBot | {{file_name}}</title>
-    <link rel="icon" href="https://i.ibb.co/Hh4kF2b/icon.png" type="image/x-icon">
-    <link rel="shortcut icon" href="https://i.ibb.co/Hh4kF2b/icon.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/proavipatil/data@main/fs/src/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/proavipatil/data@main/fs/src/plyr.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-
-</head>
-
-<body>
-    <nav>
-    
-   
-    <div class="outer">
-        <div class="inner">
-            <div class="main" id="main">
-                <video id="player" class="player" src="{{file_url}}" type="video/mp4" playsinline controls
-                    width="100%"></video>
-                <div class="player"></div>
-                <div class="file-name">
-                    <h4 style="display: inline;">File Name: </h4>
-                    <p style="display: inline;" id="myDiv">{{file_name}}</p><br>
-                    <h4 style="display: inline;">File Size: </h4>
-                    <p style="display: inline;">{{file_size}}</p>
-                </div>
+    <center>
+	<br>
+        </br>    
+        <div class="main" id="main">
+            <video id="player" class="player" src="{{file_url}}" type="video/mp4" playsinline controls width="100%"></video>
+            <div class="player"></div>
+    </center>
+    </br>
+    <h2 class="wdcraftfillnow">
+        📂 File Name
+    </h2>
+    <center>
+        <p class="wdcraftfilename">
+            {{file_name}}
+        </p>
+    </center> <br>
+    <center>
+        <div class="outer">
+            <div class="inner">
                 <div class="downloadBtn">
-                    <button class="magnet" onclick="streamDownload()">
-                        <img style="height: 30px;" src="https://i.ibb.co/RjzYttX/dl.png" alt="">download video
-                    </button>
-                    <button class="magnet" onclick="copyStreamLink()">
-                        <img src="https://i.ibb.co/CM4Y586/link.png" alt="Copy Link">copy link
-                    </button>
-                    <button class="magnet" onclick="vlc_player()">
-                        <img src="https://i.ibb.co/px6fQs1/vlc.png" alt="">watch in VLC PLAYER
-                    </button>
-                    <button class="magnet" onclick="mx_player()">
-                        <img src="https://i.ibb.co/41WvtQ3/mx.png" alt="">watch in MX PLAYER
-                    </button>
-                    <button class="magnet" onclick="n_player()">
-                        <img src="https://i.ibb.co/Hd2dS4t/nPlayer.png" alt="">watch in nPlayer
-                    </button>
+                    <button onclick="openVideo('vlc')">VLC PLAYER</button>
+                    <button onclick="openVideo('mx')">MX PLAYER</button><br>
+                    <button onclick="openVideo('playit')">PLAYitPLAYER</button>
+                    <button onclick="openVideo('s')">S PLAYER</button>
+                    <button onclick="downloadVideo()">Download Link</button>
                 </div>
+    </center>
+    </br>
+    <center>
+        <h2 class="wdcraftheadline">📌 Disclaimer 📌</h2>
+        <p class="wdcraftmain">The streaming links provided on this website are generated ⚠️ automatically by users through our Telegram bot. Bot owner is WOODcraft We do not host, control, or endorse any of the content streamed through these links. Users are solely responsible
+            for the content they share, and we disclaim any liability for the legality, accuracy, or appropriateness of such content. Use discretion and adhere to copyright laws when accessing streaming content through our platform.</p>
+    </center>
+    <br><br>
+    <center>
+        <h2 class="wdcraftsocial">🔍 Follow Now 🔎</h2>
+    </center>
+    <br>
+    <center>
+        <ul class="example-2">
+            <li class="icon-content">
+                <a data-social="github" aria-label="Github" href="https://github.com/SudoR2spr/" target="_blank">
+                    <div class="filled"></div>
+                    <svg viewBox="0 0 496 512" version="1.1">
+                  <path
+                    fill="currentColor"
+                    d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
+                  ></path>
+                </svg>
+                </a>
+                <div class="tooltip">Github</div>
+            </li>
+            <li class="icon-content">
+                <a data-social="instagram" aria-label="Instagram" href="https://www.instagram.com/" target="_blank">
+                    <div class="filled"></div>
+                    <svg xml:space="preserve" viewBox="0 0 448 512" version="1.1">
+                  <path
+                    fill="currentColor"
+                    d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+					></path>
+                </svg>
+                </a>
+                <div class="tooltip">instagram</div>
+            </li>
+            <li class="icon-content">
+                <a data-social="dribbble" aria-label="Dribbble" href="https://t.me/Opleech_WD/13" target="_blank">
+                    <div class="filled"></div>
+                    <svg viewBox="0 0 640 512" version="1.1">
+                  <path
+                    fill="currentColor"
+                    d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"
+                  ></path>
+                </svg>
+                </a>
+                <div class="tooltip">BOT's</div>
+            </li>
+            <li class="icon-content">
+                <a data-social="telegram" aria-label="Telegram" href="https://t.me/Opleech_WD" target="_blank">
+                    <div class="filled"></div>
+                    <svg viewBox="0 0 100 100" version="1.1">
+                  <path
+                    fill="currentColor"
+                    d="M95,9.9c-1.3-1.1-3.4-1.2-7-0.1c0,0,0,0,0,0c-2.5,0.8-24.7,9.2-44.3,17.3c-17.6,7.3-31.9,13.7-33.6,14.5  c-1.9,0.6-6,2.4-6.2,5.2c-0.1,1.8,1.4,3.4,4.3,4.7c3.1,1.6,16.8,6.2,19.7,7.1c1,3.4,6.9,23.3,7.2,24.5c0.4,1.8,1.6,2.8,2.2,3.2  c0.1,0.1,0.3,0.3,0.5,0.4c0.3,0.2,0.7,0.3,1.2,0.3c0.7,0,1.5-0.3,2.2-0.8c3.7-3,10.1-9.7,11.9-11.6c7.9,6.2,16.5,13.1,17.3,13.9  c0,0,0.1,0.1,0.1,0.1c1.9,1.6,3.9,2.5,5.7,2.5c0.6,0,1.2-0.1,1.8-0.3c2.1-0.7,3.6-2.7,4.1-5.4c0-0.1,0.1-0.5,0.3-1.2  c3.4-14.8,6.1-27.8,8.3-38.7c2.1-10.7,3.8-21.2,4.8-26.8c0.2-1.4,0.4-2.5,0.5-3.2C96.3,13.5,96.5,11.2,95,9.9z M30,58.3l47.7-31.6  c0.1-0.1,0.3-0.2,0.4-0.3c0,0,0,0,0,0c0.1,0,0.1-0.1,0.2-0.1c0.1,0,0.1,0,0.2-0.1c-0.1,0.1-0.2,0.4-0.4,0.6L66,38.1  c-8.4,7.7-19.4,17.8-26.7,24.4c0,0,0,0,0,0.1c0,0-0.1,0.1-0.1,0.1c0,0,0,0.1-0.1,0.1c0,0.1,0,0.1-0.1,0.2c0,0,0,0.1,0,0.1  c0,0,0,0,0,0.1c-0.5,5.6-1.4,15.2-1.8,19.5c0,0,0,0,0-0.1C36.8,81.4,31.2,62.3,30,58.3z"
+                  ></path>
+                </svg>
+                </a>
+                <div class="tooltip">Telegram</div>
+            </li>
+        </ul>
+        <br> <br>
+        <center>
+            <h5 class="text-center">Copyright © 2024 <a class="link" href="https://t.me/Opleech_WD"><span
+        style="font-weight: 700;">❖ 𝐖𝐃 𝐙𝐎𝐍𝐄 ❖ ™</span></a>. All Rights Reserved.</h5>
+        </center>
 
-            </div>
-            <div class="abt">
-                <div class="about">
-                    <div class="about-dets">
 
-                        <div class="abt-sec" id="abtus" style="padding: 160px 30px;">
-                            <h1 style="text-align: center;">WELCOME TO OUR <Span>FILE STREAM</Span> BOT</h1>
-                            <p style="text-align: center; line-height: 2;word-spacing: 2px;  letter-spacing: 0.8px;">
-                                This is a Telegram Bot to Stream <span>Movies</span> and <span>Series</span> directly on
-                                Telegram. You can also
-                                <span>download</span> them if you want. This bot is developed by <a
-                                    href="https://github.com/GTMovies"><span style="font-weight: 700;">GTMovies</span></a>
-                                <br><br>If you like this bot, then don't
-                                forget to share it with your friends and family.
-                            </p>
-                        </div>
-
-                        <div class="abt-sec" id="channels">
-                            <h1>JOIN OUR <span>TELEGRAM</span> CHANNELS</h1>
-                            <div class="links chnl-link">
-                                <a class="magnet" href="https://t.me/CheapieDeals">
-                                    <button>CHEAP DEALS</button>
-                                </a>
-                                <a class="magnet" href="https://t.me/FilmyPixel">
-                                    <button>FILMYPIXEL</button>
-                                </a>
-                                <a class="magnet" href="https://t.me/PostersZone">
-                                    <button>POSTERS ZONE</button>
-                                </a>
-                                <a class="magnet" href="https://t.me/EpitomeQuality">
-                                    <button>EPITOME QUALITY</button>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="abt-sec" id="contact">
-                            <p style="text-align: center;">Report Bugs and Contact us on Telegram Below</p>
-                            <div class="links contact">
-                                <a href="https://t.me/GTMovies">
-                                    <button>CONTACT</button>
-                                </a>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
         </div>
-        <footer>
-            <center>
+        </div>
 
-                <div class="movie-cont">
-                    <div class="movieSug">
-                        <div class="movieDets">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdn.plyr.io/3.6.9/plyr.js"></script>
+        <script>
+            function runAnimation(el) {
+                gsap.from(el, {
+                    scaleX: 0,
+                    y: "200",
+                    duration: 0.8,
+                    stagger: 0.4,
+                    opacity: 0,
+                });
+            }
+            const removeClass = () => {
+                const lis = document.querySelectorAll("ul li");
+                for (const li of lis) {
+                    li.classList.remove("active");
+                }
+                return Array.from(lis);
+            };
 
-                        </div>
-                        <div class="movieimg">
-                            <img src="">
-                        </div>
-                    </div>
-                    <div class="low-width-movie-dets">
-                        <div class="movieStsBar">
-                            <div class="movieDets-mini">
+            const scrollto = (me, element) => {
+                if (me.classList.contains("active")) return;
+                if (me.tagName === "LI") {
+                    removeClass();
+                    me.classList.add("active");
+                }
+                document.querySelector(element).scrollIntoView({
+                    behavior: "smooth"
+                });
+                if (element === ".top") {
+                    removeClass()[1].classList.add("active");
+                    runAnimation(".page2 .top video , .top .file-name , .top .buttons button");
+                } else if (element === ".about") {
+                    removeClass()[2].classList.add("active");
+                    runAnimation(".about h4 , .about .buttons button");
+                }
+            };
 
-                            </div>
-                        </div>
-                    </div>
-                    <button class="ranMovBtn" onclick="getDets()">Get More Movies Suggestion</button>
-                </div>
+            let tl = gsap.timeline();
+            tl.from(".page1 .welcome, .page1 .file-name ", {
+                y: "200",
+                scaleX: 0,
 
-            </center>
+                duration: 1,
+                stagger: 0.4,
+                opacity: 0,
+            });
+            tl.from(".scroll", {
+                scale: 0
+            });
+            tl.to(".scroll", {
+                y: "15",
+                duration: 1,
+                repeat: -1,
+                yoyo: true,
+            });
+            tl.from(".page1 .download h1, .page1 .buttons button ", {
+                scaleX: 0.6,
+                y: "200",
+                duration: 1,
+                stagger: 1,
+                opacity: 0,
+                scrollTrigger: {
+                    trigger: ".download .buttons",
+                    scroller: ".page1",
+                    start: "top 90%",
+                    end: "top 30%",
+                    scrub: 5,
+                },
+            });
+            tl.from(".page1 .dont-scroll h3, .page1 .dont-scroll .buttons", {
+                scaleX: 0,
+                y: "200",
+                duration: 2,
+                stagger: 1,
+                opacity: 0,
+                scrollTrigger: {
+                    trigger: ".dont-scroll",
+                    scroller: ".page1",
+                    start: "top 60%",
+                    end: "top 0%",
+                    scrub: 2,
+                },
+            });
+            gsap.from(".page2 .top", {
+                scaleX: 0,
+                y: "200",
+                duration: 2,
+                stagger: 1,
+                opacity: 0,
+            });
+            tl.from(".disc-inner h3, .disc-inner p", {
+                scaleX: 0.5,
+                y: "200",
+                duration: 0.8,
+                stagger: 0.4,
+                opacity: 0,
+                scrollTrigger: {
+                    trigger: ".disc-inner",
+                    scroller: ".page2",
+                    start: "top 70%",
+                    end: "top 40%",
+                    scrub: 2,
+                },
+            });
+            tl.from(".socials h2, .socials button", {
+                scaleX: 0.5,
+                y: "200",
+                duration: 0.8,
+                stagger: 0.4,
+                opacity: 0,
+                scrollTrigger: {
+                    trigger: ".socials .buttons",
+                    scroller: ".page3",
+                    start: "top 90%",
+                    end: "top 50%",
+                    scrub: 2,
+                },
+            });
 
-            <center>
-                <div class="copyright">
-                    <h5 class="text-center">Copyright © 2024 <a href="https://github.com/GTMovies"><span
-                                style="font-weight: 700;">GTMovies</span></a>. All
-                        Rights Reserved.</h5>
-                </div>
-            </center>
-        </footer>
-    </div>
-    </body>
+            // video player
+            const controls = [
+                "play-large",
+                "rewind",
+                "play",
+                "fast-forward",
+                "progress",
+                "current-time",
+                "duration",
+                // 'mute',
+                // 'volume',
+                "captions",
+                "pip",
+                "airplay",
+                // "download",
+                "fullscreen",
+            ];
+            document.addEventListener("DOMContentLoaded", () => {
+                const player = Plyr.setup(".player", {
+                    controls
+                });
+            });
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/automat/controlkit.js@master/bin/controlKit.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sheryjs/dist/Shery.js"></script>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const uncopyableElement = document.querySelector(".uncopyable");
+            // disabling right click
+            document.addEventListener("contextmenu", function(e) {
+                e.preventDefault();
+            });
+            document.addEventListener("keydown", function(e) {
+                if (
+                    e.key === "F12" ||
+                    (e.ctrlKey && e.shiftKey && e.key === "I") ||
+                    (e.ctrlKey && e.key === "u") ||
+                    e.ctrlKey ||
+                    e.shiftKey ||
+                    e.altKey
+                ) {
+                    e.preventDefault();
+                }
+            });
 
-        uncopyableElement.addEventListener("selectstart", function (event) {
-            event.preventDefault();
-        });
-    });
-</script>
-<script src="https://cdn.plyr.io/3.6.9/plyr.js"></script>
-<script src="https://proavipatil.github.io/data/fs/src/script.js"></script>
+            const videolink = window.location.href;
+            const woodlink = videolink.replace("/watch/", "/");
 
-</html>
+            function openVideo(player) {
+                const videoLink = window.location.href;
+                let playerLink;
+
+                switch (player) {
+                    case 'vlc':
+                        playerLink = `vlc://${videoLink}`;
+                        break;
+                    case 'mx':
+                        playerLink = `intent:${videoLink}#Intent;package=com.mxtech.videoplayer.ad;end`;
+                        break;
+                    case 's':
+                        playerLink = `intent:${videoLink}#Intent;action=com.young.simple.player.playback_online;package=com.young.simple.player;end`;
+                        break
+
+                    case 'playit':
+                        playerLink = `playit://playerv2/video?url=${videoLink}`;
+                        break;
+                }
+
+                if (playerLink) {
+                    window.location.href = playerLink;
+                } else {
+                    console.error(`Player '${player}' not supported`);
+                }
+            }
+
+            function downloadVideo() {
+                // Get the current window pathname
+                const pathname = window.location.pathname;
+                
+                // Get the query string portion of the URL
+                const queryString = window.location.search;
+                
+                // Construct the download URL with pathname and query string
+                const downloadUrl = `https://wdzone-files-link-8909e13cdf10.herokuapp.com/${pathname}${queryString}`;
+            
+                // Open the new URL in a new window or tab
+                window.open(downloadUrl, "_blank");
+            }
+            
+        </script>
+</body>
+
+        </html>
