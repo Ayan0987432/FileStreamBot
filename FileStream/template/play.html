@@ -1,71 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>GtMovies</title>
-  <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Movies App</title>
+<style>
     body {
-      background-image: url("background.jpg");
-      background-size: cover;
-      background-repeat: no-repeat;
-      color: white;
-      text-align: center;
-      font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url('background.jpg');
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 24px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
-
-    .slideshow {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
+    #slideshow {
+        width: 100%;
+        max-width: 800px;
+        overflow: hidden;
+        border-radius: 10px;
     }
-
-    .slide {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background-size: cover;
-      background-repeat: no-repeat;
-      animation: slide 5s infinite;
+    #slideshow img {
+        width: 100%;
+        height: auto;
+        display: block;
     }
-
-    @keyframes slide {
-      0% {
-        transform: translateX(0);
-      }
-      25% {
-        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRITxaEBapgd9m4HZX7mDyyMXdxvewgrOIOOw&usqp=CAU");
-      }
-      50% {
-        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRghf-coFyo1NsiLp4n6JyYb2VN7XP6vgcahw&usqp=CAU");
-      }
-      75% {
-        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS376GTjTmKi6D30_Z50SMg4aNj5RayrIS8dw&usqp=CAU");
-      }
-      100% {
-        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDEt5q0ycD-mr_kKnRyPULbT1yOwcue5HdNQ&usqp=CAU");
-        transform: translateX(0);
-      }
-    }
-
-    .title {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      color: white;
-      font-size: 24px;
-    }
-  </style>
+</style>
 </head>
 <body>
-  <div class="slideshow">
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-  </div>
-  <div class="title">GtMovies</div>
+    <h1>Movies App</h1>
+    <div id="slideshow">
+        <img src="movie1.jpg" alt="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS376GTjTmKi6D30_Z50SMg4aNj5RayrIS8dw&usqp=CAU">
+        <img src="movie2.jpg" alt="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRITxaEBapgd9m4HZX7mDyyMXdxvewgrOIOOw&usqp=CAU">
+        <img src="movie3.jpg" alt="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRghf-coFyo1NsiLp4n6JyYb2VN7XP6vgcahw&usqp=CAU">
+    </div>
+    <button onclick="downloadMovie()">Download</button>
+    <script>
+        function downloadMovie() {
+            // Add download functionality here
+            alert('Downloading movie...');
+        }
+    </script>
 </body>
 </html>
