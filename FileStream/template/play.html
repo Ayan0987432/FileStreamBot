@@ -4,7 +4,9 @@
   <title>GtMovies</title>
   <style>
     body {
-      background-color: black;
+      background-image: url("background.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
       color: white;
       text-align: center;
       font-family: Arial, Helvetica, sans-serif;
@@ -34,11 +36,53 @@
       text-transform: uppercase;
       cursor: pointer;
     }
+
+    .slideshow {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .slide {
+      width: 150px;
+      height: 200px;
+      background-color: blue;
+      animation: slide 5s infinite;
+    }
+
+    @keyframes slide {
+      0% {
+        transform: translateX(0);
+      }
+      25% {
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS376GTjTmKi6D30_Z50SMg4aNj5RayrIS8dw&usqp=CAU");
+      }
+      50% {
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRITxaEBapgd9m4HZX7mDyyMXdxvewgrOIOOw&usqp=CAU");
+      }
+      75% {
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRghf-coFyo1NsiLp4n6JyYb2VN7XP6vgcahw&usqp=CAU");
+      }
+      100% {
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDEt5q0ycD-mr_kKnRyPULbT1yOwcue5HdNQ&usqp=CAU");
+        transform: translateX(0);
+      }
+    }
   </style>
 </head>
 <body>
   <h1>GtMovies</h1>
   <p>The best place to watch movies online.</p>
   <a href="download.html" class="button">Download Now</a>
+
+  <div class="slideshow">
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <div class="slide"></div>
+  </div>
 </body>
 </html>
