@@ -12,46 +12,60 @@
       font-family: Arial, Helvetica, sans-serif;
     }
 
-    .thumbnail {
-      width: 150px;
-      height: 200px;
-      background-color: blue;
-      margin: 20px;
+    .slideshow {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-size: cover;
+      background-repeat: no-repeat;
+      animation: slide 5s infinite;
+    }
+
+    @keyframes slide {
+      0% {
+        transform: translateX(0);
+      }
+      25% {
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRITxaEBapgd9m4HZX7mDyyMXdxvewgrOIOOw&usqp=CAU");
+      }
+      50% {
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRghf-coFyo1NsiLp4n6JyYb2VN7XP6vgcahw&usqp=CAU");
+      }
+      75% {
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS376GTjTmKi6D30_Z50SMg4aNj5RayrIS8dw&usqp=CAU");
+      }
+      100% {
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDEt5q0ycD-mr_kKnRyPULbT1yOwcue5HdNQ&usqp=CAU");
+        transform: translateX(0);
+      }
+    }
+
+    .title {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      color: white;
+      font-size: 24px;
     }
   </style>
 </head>
 <body>
-  <h1>GtMovies</h1>
-  <p>The best place to watch movies online.</p>
-
-  <div id="thumbnails"></div>
-
-  <script>
-    // Create an array of the thumbnail URLs
-    const thumbnails = [
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRITxaEBapgd9m4HZX7mDyyMXdxvewgrOIOOw&usqp=CAU",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS376GTjTmKi6D30_Z50SMg4aNj5RayrIS8dw&usqp=CAU",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRghf-coFyo1NsiLp4n6JyYb2VN7XP6vgcahw&usqp=CAU",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDEt5q0ycD-mr_kKnRyPULbT1yOwcue5HdNQ&usqp=CAU"
-    ];
-
-    // Create a function to fetch the thumbnails
-    const fetchThumbnails = async () => {
-      // Loop through the array of thumbnail URLs
-      for (let i = 0; i < thumbnails.length; i++) {
-        // Create a new image element
-        const img = document.createElement("img");
-
-        // Set the image's source to the thumbnail URL
-        img.src = thumbnails[i];
-
-        // Add the image to the thumbnails div
-        document.getElementById("thumbnails").appendChild(img);
-      }
-    };
-
-    // Call the fetchThumbnails function
-    fetchThumbnails();
-  </script>
+  <div class="slideshow">
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <div class="slide"></div>
+  </div>
+  <div class="title">GtMovies</div>
 </body>
 </html>
